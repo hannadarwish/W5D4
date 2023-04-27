@@ -12,8 +12,8 @@ class Enrollment < ApplicationRecord
     validates :course_id, :student_id, presence: true
 
     belongs_to :student,
-    foreign_key: student_id,
-    primary_key: id,
+    foreign_key: :student_id,
+    primary_key: :id,
     class_name: :User
     
 end
