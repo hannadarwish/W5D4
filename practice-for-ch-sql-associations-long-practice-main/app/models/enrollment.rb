@@ -20,4 +20,5 @@ class Enrollment < ApplicationRecord
     foreign_key: :course_id,
     primary_key: :id,
     class_name: :Course
+
 end
