@@ -10,6 +10,10 @@
 #  updated_at    :datetime         not null
 #
 class Course < ApplicationRecord
-    validates :name, :prereq_id, :instructor_id, presence: true
-end
+    validates :name, :instructor_id, presence: true
 
+    has_many :enrollments,
+    foreign_key: :course_id,
+    primary_key: :id,
+    class_name: :Enrollment
+end
