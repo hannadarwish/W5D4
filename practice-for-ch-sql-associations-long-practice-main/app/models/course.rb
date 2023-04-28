@@ -21,5 +21,20 @@ class Course < ApplicationRecord
     has_many :students,
     through: :enrollments,
     source: :student
-    
+
+    has_many :enrolled_students,
+    through: :enrollments,
+    source: :student
+
+    belongs_to :prerequisite,
+    foreign_key: :prereq_id,
+    primary_key: :id,
+    class_name: :Course,
+    optional: true
+
+    belongs_to :instructor,
+    foreign_key: :instructor_id,
+    primary_key: :id,
+    class_name: :User
+
 end
